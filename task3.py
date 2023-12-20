@@ -1,24 +1,23 @@
 import tkinter as tk
 from tkinter import *
-#importing ttk is required to use the tkinter.place() method
-from tkinter import ttk
-
-
 
 window = tk.Tk()
 window.title("Example")
-window.geometry("270x137")
+window.geometry("280x145")
 
-label1 = tk.Label(window,text="  A cuddly little puppy! This is from the same  \n   creators who brought you Keropi and Kero Kero  ", bg="#9be8e4")
+label1 = tk.Label(window, text="  A cuddly little puppy! This is from the same  \n   creators who brought you Keropi and Kero Kero  ", bg="#9be8e4")
 
 dogphoto = PhotoImage(file="dog.png")
-dog = tk.Label(window, image=dogphoto, borderwidth=0,)
+dog = tk.Label(window, image=dogphoto, borderwidth=0)
 
-name = tk.Label(window, text="Poachacco!", )
-#change to .grid method
+name = tk.Label(window, text="Poachacco!")
 
-label1.place(x=0,y=100)
-dog.place(x=70, y=0)
-name.place(x=135, y=40)
+# Change to .grid method
+label1.grid(row=2, column=0, columnspan=3, pady=(10, 0), padx=10, sticky="w")
+dog.grid(row=1, column=1, pady=(0, 0), padx=10, sticky="w")
+name.grid(row=1, column=2, pady=(0, 0), padx=10, sticky="w")
+
+
+
 
 window.mainloop()
